@@ -2,17 +2,27 @@ package com.back;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class AppTest {
     @Test
-    @DisplayName("첫번째 테스트")
+    @DisplayName("1 + 2 == 3")
     void t1() {
-        System.out.println("테스트1");
+
+        App app = new App();
+        int rst = app.plus(1,2);
+
+        //rst가 3인지 자동으로 확인. 검증
+        assertThat(rst).isEqualTo(3);
     }
 
     @Test
-    @DisplayName("두번째 테스트")
+    @DisplayName("10 + 20 == 30")
     void t2() {
-        System.out.println("테스트2");
+        App app = new App();
+        int rst = app.plus(10,20);
+
+        assertThat(rst).isEqualTo(30);
     }
+
 }
