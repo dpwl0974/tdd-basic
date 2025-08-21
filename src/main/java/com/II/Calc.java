@@ -10,12 +10,12 @@ public class Calc {
             if((c == '+' || c == '-') && i > 0) {
                 String left = expr.substring(0, i);
                 String right = expr.substring(i+1);
-                int leftNum = Integer.parseInt(left);
-                int rightNum = Integer.parseInt(right);
+                int leftNum = run(left);
+                int rightNum = run(right);
 
                 return c == '+' ? leftNum + rightNum : leftNum - rightNum;
             }
         }
-        return 0;
+        return Integer.parseInt(expr);
     }
 }
