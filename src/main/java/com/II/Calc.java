@@ -7,13 +7,13 @@ public class Calc {
         for(int i = 0; i < expr.length(); i++) {
             char c = expr.charAt(i);
 
-            if(c == '+' && i > 0) {
+            if((c == '+' || c == '-') && i > 0) {
                 String left = expr.substring(0, i);
                 String right = expr.substring(i+1);
                 int leftNum = Integer.parseInt(left);
                 int rightNum = Integer.parseInt(right);
 
-                return leftNum + rightNum;
+                return c == '+' ? leftNum + rightNum : leftNum - rightNum;
             }
         }
         return 0;
