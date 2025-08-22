@@ -4,7 +4,7 @@ public class Calc {
     public static int run(String s) {
         String expr = s.replace(" ",""); //1+1
 
-        for(int i = 0; i < expr.length(); i++) {
+        for(int i = expr.length() - 1; i >= 0; i--) {
             char c = expr.charAt(i);
 
             if((c == '+' || c == '-') && i > 0) {
